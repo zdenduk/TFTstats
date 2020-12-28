@@ -39,10 +39,7 @@ namespace TFTstats.ViewModel
             summonerLeagueApi.getSummonerLeagueBySummonerId(SummonerDTO.Instance.id);
 
             TFT_MATCH_V1 matchApi = new TFT_MATCH_V1(Region);
-            string[] arr = matchApi.getMatchHistoryIds(SummonerDTO.Instance.puuid, 5);
-            for (int i = 0; i < arr.Length; i++) {
-                Console.WriteLine(arr[i]);
-            }
+            List<MatchDTO> matchHistory = matchApi.getMatchHistory(SummonerDTO.Instance.puuid, 5);
 
             await Task.Delay(1500);
 

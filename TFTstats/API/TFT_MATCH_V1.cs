@@ -17,7 +17,7 @@ namespace TFTstats.API
             string query = "match/v1/matches/by-puuid/" + puuid + "/ids?count=" + number.ToString();
             string route = getRoutingValue();
 
-            var response = GET(getURLRoutingValueRegion(query, route));
+            var response = GET(getURLRoutingValueRegionMultipleParameters(query, route));
             string content = response.Content.ReadAsStringAsync().Result;
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -30,7 +30,7 @@ namespace TFTstats.API
 
         public List<MatchDTO> getMatchHistory(string puuid, int number)
         {
-            List<MatchDTO> ret = new List<MatchDTO>;
+            List<MatchDTO> ret = new List<MatchDTO>();
 
             string[] matchHistoryIds = getMatchHistoryIds(puuid, number);
 
@@ -46,8 +46,12 @@ namespace TFTstats.API
                 {
                     MatchDTO match = JsonConvert.DeserializeObject<MatchDTO>(content);
                     ret.Add(match);
+                    Console.WriteLine(match.Info.game_datetime);
                 }
-                return null;
+                else
+                {
+                    return null;
+                }
             }
             return ret;
         }

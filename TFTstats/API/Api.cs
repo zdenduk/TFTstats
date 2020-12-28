@@ -43,7 +43,12 @@ namespace TFTstats.API
 
         protected string getURLRoutingValueRegion(string query, string route)
         {
-            Console.WriteLine("https://" + route + ".api.riotgames.com/tft/" + query + "&api_key=" + Key);
+            Console.WriteLine("https://" + route + ".api.riotgames.com/tft/" + query + "?api_key=" + Key);
+            return "https://" + route + ".api.riotgames.com/tft/" + query + "?api_key=" + Key;
+        }
+
+        protected string getURLRoutingValueRegionMultipleParameters(string query, string route)
+        {
             return "https://" + route + ".api.riotgames.com/tft/" + query + "&api_key=" + Key;
         }
     }
