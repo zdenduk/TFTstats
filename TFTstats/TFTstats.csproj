@@ -75,10 +75,14 @@
     <Compile Include="API\TFT_LEAGUE_V1.cs" />
     <Compile Include="API\TFT_MATCH_V1.cs" />
     <Compile Include="Converter\DataDragonSummonerIconConverter.cs" />
+    <Compile Include="Model\CompanionDTO.cs" />
     <Compile Include="Model\InfoDTO.cs" />
     <Compile Include="Model\MatchDTO.cs" />
     <Compile Include="Model\MetadataDTO.cs" />
+    <Compile Include="Model\ParticipantDTO.cs" />
     <Compile Include="Model\SummonerLeagueDTO.cs" />
+    <Compile Include="Model\TraitDTO.cs" />
+    <Compile Include="Model\UnitDTO.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ProfileViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
