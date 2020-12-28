@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TFTstats.Model;
 
 namespace TFTstats.API
 {
@@ -11,10 +12,48 @@ namespace TFTstats.API
     {
         public TFT_MATCH_V1(string region) : base(region) { }
 
-        public string[] getLastMatches(string puuid, int number)
+        public string[] getMatchHistoryIds(string puuid, int number)
         {
             string query = "match/v1/matches/by-puuid/" + puuid + "/ids?count=" + number.ToString();
+            string route = getRoutingValue();
 
+            var response = GET(getURLRoutingValueRegion(query, route));
+            string content = response.Content.ReadAsStringAsync().Result;
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                string[] arr = JsonConvert.DeserializeObject<string[]>(content);
+                return arr;
+            }
+            return null;
+        }
+
+        public List<MatchDTO> getMatchHistory(string puuid, int number)
+        {
+            List<MatchDTO> ret = new List<MatchDTO>;
+
+            string[] matchHistoryIds = getMatchHistoryIds(puuid, number);
+
+            string route = getRoutingValue();
+
+            for (int i = 0; i < matchHistoryIds.Length; i++)
+            {
+                string query = "match/v1/matches/" + matchHistoryIds[i];
+                var response = GET(getURLRoutingValueRegion(query, route));
+                string content = response.Content.ReadAsStringAsync().Result;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    MatchDTO match = JsonConvert.DeserializeObject<MatchDTO>(content);
+                    ret.Add(match);
+                }
+                return null;
+            }
+            return ret;
+        }
+
+        private string getRoutingValue()
+        {
             string route;
             switch (Region)
             {
@@ -36,18 +75,10 @@ namespace TFTstats.API
                     route = "asia";
                     break;
                 default:
-                    throw new Exception("Region must be one of known values. See https://developer.riotgames.com/docs/tft#_routing-values for more information."); 
+                    throw new Exception("Region must be one of known values. See https://developer.riotgames.com/docs/tft#_routing-values for more information.");
             }
 
-            var response = GET(getURLRoutingValueRegion(query, route));
-            string content = response.Content.ReadAsStringAsync().Result;
-
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                string[] arr = JsonConvert.DeserializeObject<string[]>(content);
-                return arr;
-            }
-            return null;
+            return route;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using TFTstats.API;
@@ -38,7 +39,7 @@ namespace TFTstats.ViewModel
             summonerLeagueApi.getSummonerLeagueBySummonerId(SummonerDTO.Instance.id);
 
             TFT_MATCH_V1 matchApi = new TFT_MATCH_V1(Region);
-            string[] arr = matchApi.getLastMatches(SummonerDTO.Instance.puuid, 5);
+            string[] arr = matchApi.getMatchHistoryIds(SummonerDTO.Instance.puuid, 5);
             for (int i = 0; i < arr.Length; i++) {
                 Console.WriteLine(arr[i]);
             }
