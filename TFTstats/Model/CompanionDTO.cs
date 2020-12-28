@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TFTstats.Model
 {
-    internal class CompanionDTO
+    public class CompanionDTO
     {
         public string content_ID { get; set; }
         public int skin_ID { get; set; }

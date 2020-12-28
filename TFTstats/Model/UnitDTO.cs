@@ -2,7 +2,7 @@
 
 namespace TFTstats.Model
 {
-    internal class UnitDTO
+    public class UnitDTO
     {
         public List<int> items { get; set; }
         public string character_id { get; set; }

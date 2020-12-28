@@ -1,6 +1,6 @@
 ﻿namespace TFTstats.Model
 {
-    internal class TraitDTO
+    public class TraitDTO
     {
         public string name { get; set; }
         public int num_units { get; set; }
