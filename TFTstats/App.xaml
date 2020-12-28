@@ -1,0 +1,15 @@
+﻿<Application x:Class="TFTstats.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewmodel="clr-namespace:TFTstats.ViewModel"
+             xmlns:view="clr-namespace:TFTstats.View"
+             StartupUri="View/MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:MenuViewModel}">
+            <view:MenuWindow/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:ProfileViewModel}">
+            <view:ProfileWindow/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

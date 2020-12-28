@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFTstats", "TFTstats\TFTstats.csproj", "{F83FE8CF-CB42-4942-BC9D-D252F50E8A40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F83FE8CF-CB42-4942-BC9D-D252F50E8A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83FE8CF-CB42-4942-BC9D-D252F50E8A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83FE8CF-CB42-4942-BC9D-D252F50E8A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83FE8CF-CB42-4942-BC9D-D252F50E8A40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC6B2506-4F36-459A-9F04-60807C56AD4E}
+	EndGlobalSection
+EndGlobal
