@@ -8,5 +8,8 @@ namespace TFTstats.Model
 {
     public class MetadataDTO
     {
+        string data_version { get; set; }
+        string match_id { get; set; }
+        List<string> participants { get; set; }
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TFTstats.Model
 {
-    class InfoDTO
+    public class InfoDTO
     {
+        public long game_datetime { get; set; }
+        public float game_length { get; set; }
+        public string game_variation { get; set; }
+        public string game_version { get; set; }
+        public List<ParticipantDTO> participants { get; set; }
     }
 }
