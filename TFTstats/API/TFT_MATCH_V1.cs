@@ -46,7 +46,6 @@ namespace TFTstats.API
                 {
                     MatchDTO match = JsonConvert.DeserializeObject<MatchDTO>(content);
                     ret.Add(match);
-                    Console.WriteLine(match.Info.game_datetime);
                 }
                 else
                 {

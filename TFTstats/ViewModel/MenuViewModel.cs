@@ -37,6 +37,7 @@ namespace TFTstats.ViewModel
 
             TFT_LEAGUE_V1 summonerLeagueApi = new TFT_LEAGUE_V1(Region);
             summonerLeagueApi.getSummonerLeagueBySummonerId(SummonerDTO.Instance.id);
+            Console.WriteLine(SummonerDTO.Instance.id);
 
             TFT_MATCH_V1 matchApi = new TFT_MATCH_V1(Region);
             List<MatchDTO> matchHistory = matchApi.getMatchHistory(SummonerDTO.Instance.puuid, 5);
