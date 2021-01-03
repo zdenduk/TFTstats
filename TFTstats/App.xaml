@@ -11,5 +11,8 @@
         <DataTemplate DataType="{x:Type viewmodel:ProfileViewModel}">
             <view:ProfileWindow/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:MatchHistoryViewModel}">
+            <view:MatchHistoryWindow/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="TFTstats.View.MatchHistoryWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TFTstats"
+             xmlns:support="clr-namespace:TFTstats.Support"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:vm="clr-namespace:TFTstats.ViewModel"
+             xmlns:converter="clr-namespace:TFTstats.Converter"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="{materialDesign:MaterialDesignFont}"
+             mc:Ignorable="d" Height="450" Width="800" Background="#FF424242">
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="50 0">
+            <Border CornerRadius="5" Background="White">
+                <ListBox ItemsSource="{Binding MatchHistoryCards}" >
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel MaxWidth="800"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel>
+                                <support:MatchControl 
+                            Placement="{Binding Placement}" >
+                                </support:MatchControl>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

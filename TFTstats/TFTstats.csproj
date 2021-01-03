@@ -83,10 +83,16 @@
     <Compile Include="Model\SummonerLeagueDTO.cs" />
     <Compile Include="Model\TraitDTO.cs" />
     <Compile Include="Model\UnitDTO.cs" />
+    <Compile Include="Support\MatchControl.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MatchHistoryViewModel.cs" />
+    <Compile Include="ViewModel\MatchViewModel.cs" />
     <Compile Include="ViewModel\ProfileViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MatchHistoryWindow.xaml.cs">
+      <DependentUpon>MatchHistoryWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
@@ -94,6 +100,10 @@
     <Compile Include="View\ProfileWindow.xaml.cs">
       <DependentUpon>ProfileWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Match.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +118,10 @@
     <Compile Include="Support\RelayCommand.cs" />
     <Compile Include="ViewModel\MenuViewModel.cs" />
     <Compile Include="Support\ViewModelBase.cs" />
+    <Page Include="View\MatchHistoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MenuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
